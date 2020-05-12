@@ -1,6 +1,14 @@
-import {Project} from './project-intr'; 
-export const projectsList: Project[] = [
-    {
+import { Injectable } from '@angular/core';
+import {InMemoryDbService} from 'angular-in-memory-web-api';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class BackendService {
+
+  constructor() {}
+  createDb(){
+      let projectsList = [{
         id: 0,
         title: "test",
         role: "developer",
@@ -47,5 +55,10 @@ export const projectsList: Project[] = [
         desc: "blah blah",
         mainPicSrc: ['../../../assets/ex.jpg'],
         gitUrl: "https://coursetro.com/posts/code/174/Angular-8-Tutorial-&-Crash-Course", 
-    }
-]
+    },
+  ]
+return {projectsList};
+  }
+   
+}
+

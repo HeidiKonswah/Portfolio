@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { projectsList } from './project-list';
+import { ApiCallsService } from '../../api-calls.service';
+
 
 @Component({
   selector: 'app-projects',
@@ -7,10 +8,14 @@ import { projectsList } from './project-list';
   styleUrls: ['./projects.component.sass']
 })
 export class ProjectsComponent implements OnInit {
-  projects = projectsList;
-  constructor() {}
+  projects: any[] = [];
+  constructor(private ApiCallsService: ApiCallsService) {}
 
   ngOnInit(): void {
+    this.ApiCallsService.getProjects().subscribe((data : any[])=>{
+      console.log(data);
+      this.projects = data;
+  })
   }
 
 }

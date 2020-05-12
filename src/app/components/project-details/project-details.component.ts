@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { projectsList } from '../projects/project-list';
-import { Project } from '../projects/project-intr';
+import { ApiCallsService } from '../../api-calls.service';
 
 @Component({
   selector: 'app-project-details',
@@ -9,14 +8,15 @@ import { Project } from '../projects/project-intr';
   styleUrls: ['./project-details.component.sass']
 })
 export class ProjectDetailsComponent implements OnInit {
-  current: Project;
-  constructor(private route: ActivatedRoute) { }
+  current: any;
+  constructor(private ApiCallsService: ApiCallsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      let crrntID = params.get('id');
-      this.current = projectsList[crrntID];
-    })
+       this.ApiCallsService.getProject(params.get('id')).subscribe(c =>{
+          this.current = c;
+      })   
+      });
   }
 
 }
