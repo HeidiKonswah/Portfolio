@@ -1,0 +1,41 @@
+$highlight: rgb(93, 89, 112)
+$light: rgb(242, 230, 194)
+$text: #333
+@import url('https://fonts.googleapis.com/css?family=Merienda|Sacramento&display=swap')
+.about-container
+    min-height: 300px
+    display: flex
+    justify-content: space-around
+    padding: 100px 100px
+    flex-wrap: wrap
+    .about-text
+        width:50%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        h2
+            color: $text
+            font-family: 'Sacramento', cursive
+        p  
+            width: 70%
+            color: $text
+        button
+            cursor: pointer
+            outline: none
+            border: none
+            background-color: $highlight
+            color: $light
+            padding: 15px 30px
+            margin: 20px 0
+            font-weight: bold
+    .about-pic
+        width: 50%
+        display: flex
+        justify-content: flex-end
+        img
+            width: 300px
+            height: 300px
+            box-shadow: 20px 20px 0px $highlight
+
+        
