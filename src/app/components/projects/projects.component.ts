@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCallsService } from '../../api-calls.service';
-
+ 
 
 @Component({
   selector: 'app-projects',
@@ -13,7 +13,6 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.ApiCallsService.getProjects().subscribe((data : any[])=>{
-      console.log(data);
       this.projects = data;
   })
   }
