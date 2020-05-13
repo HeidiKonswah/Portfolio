@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'heidi-port';
+  burgerMenu = false;
+  toggleMenu(): void{
+    this.burgerMenu = !this.burgerMenu;
+    console.log(this.burgerMenu);
+  }
 }
