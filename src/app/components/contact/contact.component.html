@@ -1,1 +1,28 @@
-<p>contact works!</p>
+<div class="contact-container">
+    
+    <div class="contact-socials">
+        <h1>CONTACT</h1>
+        <h1>ME</h1>
+        <div>
+        
+            <span *ngFor="let social of socials">
+                <a href={{social.url}} target="_blank"> 
+                    <img src={{social.icon}}/>
+                </a>
+            </span>
+        
+        
+    </div>
+    </div>
+    
+    <div class="contact-text">
+        <span>Would love to hear from you!</span>
+        <form form id="fs-frm" name="contact-form" accept-charset="utf-8" action="https://formspree.io/heidikonswah@gmail.com" method="post">
+            <textarea></textarea>
+            <input class="mainBtn" type="submit">
+        </form>
+        
+        
+    </div>
+    
+</div>

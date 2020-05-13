@@ -9,9 +9,12 @@ export class ApiCallsService {
   API_URL: string = "/api/";
   constructor(private http: HttpClient) { }
   getProjects(){    
-   return this.http.get(this.API_URL + 'projectsList')
+   return this.http.get(this.API_URL + 'projectsList');
   }
   getProject(projectID){
-   return this.http.get(`${this.API_URL + 'projectsList'}/${projectID}`) 
+   return this.http.get(`${this.API_URL + 'projectsList'}/${projectID}`);
+  }
+  getSocials(){
+    return this.http.get(this.API_URL + 'socials');
   }
 }
