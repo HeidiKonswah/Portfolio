@@ -4,7 +4,7 @@ $text: #333
 $light-opacity: rgba(93, 89, 112,0.9)
 
 .projects-container
-    background-color: $light
+    background-color: rgba(242, 230, 194,0.5)
     padding: 40px 100px
     display: grid
     grid-template-columns: repeat(3, 1fr)
@@ -32,18 +32,18 @@ $light-opacity: rgba(93, 89, 112,0.9)
             display: flex
             flex-direction: column
             justify-content: center
-            align-items: flex-start 
+            align-items: flex-start
             *
                 margin: 0px 50px
-        .details 
+        .details
             display: flex
-            flex-direction: column 
+            flex-direction: column
             align-items: flex-start
             height: 20%
             visibility: hidden
             p, span, button
                 margin: 0
-            p 
+            p
                 margin-top:20px
             .button
                 outline: none
@@ -53,7 +53,7 @@ $light-opacity: rgba(93, 89, 112,0.9)
                 padding: 7px 15px
                 color: $light
                 margin: 20px 0
-                cursor: pointer 
+                cursor: pointer
                 transition: all 0.5s
                 font-size: 1.1em
                 display: flex
@@ -64,11 +64,17 @@ $light-opacity: rgba(93, 89, 112,0.9)
                     margin-right:0
             .button:hover
                 background-color: rgba(242, 230, 194, 0.3)
-              
-    .project-item:hover 
+    .project-item:hover
         .project-details
             height: 100%
         .details
             visibility: visible
-            
-                
+
+@media only screen and (max-width: 1200px)
+    .projects-container
+        grid-template-columns: 1fr 1fr
+        padding: 40px 0
+@media only screen and (max-width: 600px)
+    .projects-container
+        grid-template-columns: 1fr
+        padding: 40px 0

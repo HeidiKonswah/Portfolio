@@ -1,18 +1,18 @@
-<div class="projects-container">
-    <div *ngFor="let project of projects" 
-    class="project-item" 
+<div class="projects-container" id="projects">
+    <div *ngFor="let project of projects"
+    class="project-item"
     [ngStyle]="{'background-image': 'url(' + project.mainPicSrc[0] + ')', 'backgroung-size': 'cover'}"
-    > 
+    >
         <div class="project-details" >
             <h3>{{project.title}}</h3>
             <div  class="details" >
-                <span>{{project.role}}</span>
+                <span>{{project.role[0]}}</span>
                 <button class="button" [routerLink]="['/project', project.id]">
                     Explore
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h11.883z"/></svg>
                 </button>
             </div>
         </div>
-        
-    </div>    
+
+    </div>
 </div>

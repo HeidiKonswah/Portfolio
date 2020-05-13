@@ -1,15 +1,15 @@
 <div class="details-container">
-    <div class="details-mainImg" [ngStyle]="{'background-image': 'url(' + current.mainPicSrc[0] + ')'}"></div>
     <div class="details-text">
+      <div class="inner">
         <h2>{{current.title}}</h2>
         <h4>{{current.role}}</h4>
         <p>{{current.desc}}</p>
         <button class="mainBtn" *ngIf="current.gitUrl.length != 0">Visit Website</button>
+      </div>
     </div>
     <div class="img-grid">
-        <div class="details-images" *ngFor="let img of current.mainPicSrc" [ngStyle]="{'background-image': 'url(' + img + ')'}">
-       
-        </div>
+        <img class="details-images" *ngFor="let img of current.mainPicSrc" src={{img}} />
+
     </div>
-    
+
 </div>
